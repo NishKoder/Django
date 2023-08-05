@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio List</title>
+  <style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      {% for c in object_list %}
+      <li>
+        <label for="f-option">{{ c }}</label>
+        <input type="radio" id="f-option" name="selector">
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
