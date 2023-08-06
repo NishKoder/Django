@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="article">
+  <h3><a href="">{{ article.title }}</a></h3>
+  <p>{{ article.text }}</p>
+</div>
+
+<h4><a href="{% url 'article_edit' article.pk %}">Edit this post</a></h4>
+<h4><a href="{% url 'article_delete' article.pk %}">Delete this post</a></h4>
+
+{% endblock content %}
