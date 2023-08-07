@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+  <title>Admin Articles can find here</title>
+  <style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">My personal blog</a></h1>
+  </header>
+
+  <div class="container">
+    {% if user.is_authenticated %}
+    <p> Y are logged in</p>
+    <p> Hey there: {{ user.username }}</p>
+    <p> Please<a href="{% url 'logout' %}">Logout</a></p>
+
+    {% else %}
+    <p> Y are not log in</p>
+    <p> Please<a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>
