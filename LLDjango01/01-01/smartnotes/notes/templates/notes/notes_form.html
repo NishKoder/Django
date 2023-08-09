@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" >Submit </button>
+    </form>
+    {% if form.errors %}
+        <div>
+            {{ form.errors.title.as_text }}
+        </div>
+    {% endif %}
+
+{% endblock %}
